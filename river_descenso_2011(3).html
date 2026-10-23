@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River 2011 | La historia del descenso</title>
+<style>
+:root {
+  --site-primary: #c8102e;
+  --site-secondary: #171717;
+  --site-background: #0d0d0f;
+  --site-on-primary: #ffffff;
+  --site-on-secondary: #ffffff;
+  --site-on-background: #f5f5f5;
+  --site-font-body: Arial, Helvetica, sans-serif;
+  --site-font-heading: Impact, "Arial Narrow", sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--site-background); color: var(--site-on-background); font-family: var(--site-font-body); }
+#app { min-height: 100vh; width: 100%; background-color: var(--site-background); }
+header { position: sticky; top: 0; z-index: 10; background: #101012; border-bottom: 1px solid #38383b; }
+.nav { max-width: 1180px; margin: auto; padding: 14px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.brand { display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:1px; }
+.crest { width:32px; height:38px; background:linear-gradient(135deg,#fff 0 42%,#d7193f 42% 57%,#fff 57%); border:2px solid white; clip-path:polygon(8% 0,92% 0,88% 70%,50% 100%,12% 70%); }
+nav { display:flex; flex-wrap:wrap; gap:8px; }
+nav button { background:transparent; border:1px solid #454549; color:#f4f4f4; padding:10px 13px; border-radius:5px; cursor:pointer; font-weight:700; }
+nav button:hover, nav button.active { background:var(--site-primary); border-color:var(--site-primary); }
+.page { display:none; min-height:calc(100vh - 65px); }
+.page.active { display:block; }
+.home { min-height:calc(100vh - 65px); display:grid; place-items:center; text-align:center; padding:32px 20px; position:relative; overflow:hidden; isolation:isolate; background:linear-gradient(120deg,rgba(0,0,0,.92),rgba(0,0,0,.62)),url('https://www.diariotag.com/content/bucket/8/267308w850h569c.webp.webp') center/cover; }
+.home:before { content:""; position:absolute; inset:0; z-index:-1; opacity:var(--site-decoration-opacity); background:linear-gradient(110deg,transparent 0 38%,rgba(200,16,46,.18) 38% 44%,transparent 44% 58%,rgba(255,255,255,.06) 58% 60%,transparent 60%); }
+.home-content { max-width:900px; }
+.eyebrow { color:#ff5b73; text-transform:uppercase; letter-spacing:4px; font-size:.8rem; font-weight:800; }
+h1,h2,h3 { font-family:var(--site-font-heading); font-weight:900; text-transform:uppercase; letter-spacing:1px; }
+.home h1 { font-size:clamp(3rem,9vw,7rem); line-height:.98; margin:20px 0; }
+.home h1 span { color:#e51c42; }
+.home p { color:#e0e0e0; font-size:1.1rem; }
+.content { max-width:1180px; margin:auto; padding:40px 22px 60px; }
+.page-heading { font-size:clamp(2.4rem,6vw,4rem); margin:0 0 10px; }
+.lead { color:#c7c7cb; line-height:1.7; max-width:850px; }
+.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:28px; }
+.card { background:#19191c; border:1px solid #333338; border-radius:8px; overflow:hidden; }
+.card img { width:100%; height:235px; display:block; object-fit:cover; background:#29292d; }
+.card-body { padding:18px; }
+.card h3 { font-size:1.4rem; margin:0 0 8px; }
+.card p { color:#c9c9ce; line-height:1.6; margin:8px 0; }
+.tag { display:inline-block; color:#fff; background:#9e1028; padding:5px 8px; border-radius:4px; font-size:.78rem; font-weight:800; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }
+.stat { padding:18px; border-left:4px solid var(--site-primary); background:#19191c; }
+.stat strong { display:block; font-size:1.6rem; margin-bottom:5px; }
+.stat span { color:#c5c5c9; font-size:.9rem; }
+.note { border-left:4px solid #c8102e; padding:14px 18px; background:#1b1719; margin-top:24px; line-height:1.65; color:#dedee2; }
+footer { padding:24px; text-align:center; color:#888; border-top:1px solid #333; font-size:.85rem; }
+a { color:#ff7187; }
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}.card img{height:190px;}.nav{align-items:flex-start; flex-direction:column;}}
+@media(max-width:540px){.grid,.stats{grid-template-columns:1fr;} .card img{height:220px;} nav button{padding:9px 10px;font-size:.85rem}.content{padding-top:30px}.home h1{font-size:3.3rem}}
+</style>
+</head>
+<body>
+<div id="app">
+<header>
+  <div class="nav">
+    <div class="brand"><span class="crest" aria-hidden="true"></span><span>RIVER 2011 <span style="color:#e51c42">/ HISTORIA</span></span></div>
+    <nav aria-label="Navegación principal">
+      <button class="active" data-page="home">Home</button>
+      <button data-page="descenso">Cómo descendió</button>
+      <button data-page="incidentes">Incidentes</button>
+    </nav>
+  </div>
+</header>
+<main>
+<section id="home" class="page active">
+  <div class="home">
+    <div class="home-content">
+      <h1>River descendió<br>a la <span>B Nacional</span></h1>
+    </div>
+  </div>
+</section>
+<section id="descenso" class="page">
+  <div class="content">
+    <div class="eyebrow">La promoción de 2011</div>
+    <h2 class="page-heading">Cómo descendió River</h2>
+    <p class="lead">River llegó a la promoción por el promedio de las últimas temporadas. Enfrentó a Belgrano de Córdoba en una serie de ida y vuelta: necesitaba revertir la derrota sufrida en Córdoba, pero el empate en el Monumental no alcanzó.</p>
+    <div class="stats">
+      <div class="stat"><strong>2–0</strong><span>Belgrano ganó la ida en Córdoba · 22 de junio</span></div>
+      <div class="stat"><strong>1–1</strong><span>Empate en el Monumental · 26 de junio</span></div>
+      <div class="stat"><strong>3–1</strong><span>Resultado global a favor de Belgrano</span></div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img src="https://resizer.glanacion.com/resizer/v2/26-de-junio-de-2011-river-desciende-a-la-segunda-E5L6Z5IHWVAE7FUAGD6FCXYSVA.jpg?auth=7d5b766588d3bc432c92f405c91df805b5a51e6491f608d35688400cf0dc0b61&height=854&quality=70&smart=true&width=1280" alt="Estadio de fútbol con tribunas y cancha" loading="lazy">
+        <div class="card-body"><span class="tag">IDA · 22/06/2011</span><h3>La derrota en Córdoba</h3><p>Belgrano ganó 2–0 en el Gigante de Alberdi, con goles de César Mansanelli, de penal, y César “Picante” Pereyra. River quedó obligado a remontar.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://www.diariotag.com/content/bucket/8/267308w850h569c.webp.webp" alt="Vista amplia de un campo de fútbol" loading="lazy">
+        <div class="card-body"><span class="tag">REVANCHA · 26/06/2011</span><h3>El gol que ilusionó</h3><p>Mariano Pavone puso el 1–0 para River a los cinco minutos. El equipo todavía necesitaba otro gol para mantenerse en Primera.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://www.elgrafico.com.ar/media/cache/pub_news_details_large/media/i/4e/07/4e07b5b8a7c18.jpg" alt="Balón sobre el césped de un estadio de fútbol" loading="lazy">
+        <div class="card-body"><span class="tag">EL MOMENTO CLAVE</span><h3>Empate y penal atajado</h3><p>Guillermo Farré empató en el segundo tiempo. Después, Juan Carlos Olave le atajó un penal a Pavone. El 1–1 dejó a River abajo en el global y consumó el descenso.</p></div>
+      </article>
+    </div>
+    <div class="note"><strong>¿Por qué descendió?</strong> Por su bajo promedio acumulado en las temporadas anteriores, que lo llevó a jugar la promoción, y porque no logró superar a Belgrano en la serie: perdió 2–0 la ida y empató 1–1 la vuelta. <a href="https://www.tycsports.com/river-plate/river-descenso-11-anos-belgrano-promocion-incidentes-id444896.html" target="_blank" rel="noopener">Leer la crónica de TyC Sports</a>.</div>
+  </div>
+</section>
+<section id="incidentes" class="page">
+  <div class="content">
+    <div class="eyebrow">Lo ocurrido en el Monumental</div>
+    <h2 class="page-heading">Incidentes</h2>
+    <p class="lead">La tensión por el resultado terminó en graves disturbios protagonizados por algunos hinchas. El árbitro Sergio Pezzotta suspendió el partido a los 44 minutos del segundo tiempo. Los hechos continuaron dentro y fuera del estadio.</p>
+    <div class="grid">
+      <article class="card">
+        <img src="https://imagenes.elpais.com/resizer/v2/LCNU4XBYQ26GEM3RCTF3FINT74.jpg?auth=2320c84c00f6513a67108bf46758defa3181dc74c3d71eecf41ce0314e8db49e&width=1960" alt="Tribunas llenas durante un partido de fútbol" loading="lazy">
+        <div class="card-body"><span class="tag">EN LAS TRIBUNAS</span><h3>Tensión y destrozos</h3><p>Se registraron daños en sectores de las tribunas y lanzamiento de objetos hacia el campo de juego. La situación impidió continuar con normalidad.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://www.semana.com/resizer/v2/WVBKBYBUMNBJ7N63FVXRNGJH4U.jpg?auth=0fe05f39ff2b91ee49b74c523359d7b21d8c730bbc6e0cc91133db3065213511&quality=75&smart=true&width=768" alt="Vista de un estadio de fútbol" loading="lazy">
+        <div class="card-body"><span class="tag">DENTRO DE LA CANCHA</span><h3>Partido suspendido</h3><p>Ante los disturbios y los objetos arrojados al césped, el árbitro dio por terminado el encuentro antes del minuto 90. Los jugadores se retiraron bajo custodia.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://www.diariopanorama.com/fotos/notas/2020/06/26/adalberto-roman-descenso-river-354173-002537.jpg" alt="Estadio visto desde el campo" loading="lazy">
+        <div class="card-body"><span class="tag">AFUERA DEL ESTADIO</span><h3>Disturbios posteriores</h3><p>Los incidentes continuaron en las inmediaciones del Monumental y hubo daños materiales y personas heridas. El estadio fue clausurado temporalmente.</p></div>
+      </article>
+    </div>
+    <div class="note"><strong>Importante:</strong> los hechos violentos fueron responsabilidad de quienes participaron en ellos y no representan a todos los hinchas. La crónica periodística documenta daños, heridos y la suspensión del encuentro. <a href="https://www.infobae.com/2011/06/26/589843-river-descendio-la-b-nacional/" target="_blank" rel="noopener">Fuente: Infobae</a> · <a href="https://www.tycsports.com/river-plate/river-descenso-11-anos-belgrano-promocion-incidentes-id444896.html" target="_blank" rel="noopener">TyC Sports</a>.</div>
+  </div>
+</section>
+</main>
+<footer>Archivo histórico futbolero · River Plate vs. Belgrano · 2011</footer>
+</div>
+<script>
+const buttons = document.querySelectorAll('nav button');
+const pages = document.querySelectorAll('.page');
+function showPage(id) {
+  pages.forEach(page => page.classList.toggle('active', page.id === id));
+  buttons.forEach(button => button.classList.toggle('active', button.dataset.page === id));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+buttons.forEach(button => button.addEventListener('click', () => showPage(button.dataset.page)));
+</script>
+</body>
+</html>
